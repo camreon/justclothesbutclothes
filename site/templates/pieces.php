@@ -22,7 +22,7 @@
 
     <!-- sidebar with tagcloud -->
     <aside>
-      <h1>Tags</h1>
+      <h3>Tags</h3>
       <ul class="tags">
         <?php foreach($tags as $tag): ?>
         <li>
@@ -37,6 +37,19 @@
           <?php endif ?>
         </li>
         <?php endforeach ?>
+      </ul>
+    </aside>
+
+    <aside>
+      <h3>Current Tags</h3>
+      <ul class="tags">
+        <?php if(is_null($filterTags): ?>
+          <?php foreach($filterTags as $tag): ?>
+          <li>
+            <?php echo html($tag) ?>
+          </li>
+          <?php endforeach ?>
+        <?php endif ?>
       </ul>
     </aside>
 

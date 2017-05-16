@@ -30,6 +30,6 @@ return function($site, $pages, $page) {
   $pieces   = $pieces->paginate(10);
   $pagination = $pieces->pagination();
 
-  return compact('pieces', 'tags', 'tag', 'pagination');
+  return compact('pieces', 'tags', 'tag', 'pagination', 'filterTags');
 
 };
