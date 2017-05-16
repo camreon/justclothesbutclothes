@@ -4,12 +4,9 @@ Kirby CMS based site
 
 ## Quick start
 
-> clone this repo
-> cd into it
-
-```
-php -S localhost:8888
-```
+- `git clone git@github.com:camreon/justclothesbutclothes.git`
+- `cd justclothesbutclothes`
+- `php -S localhost:8888`
 
 ## The Panel
 
