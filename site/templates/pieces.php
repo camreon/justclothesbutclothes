@@ -26,9 +26,15 @@
       <ul class="tags">
         <?php foreach($tags as $tag): ?>
         <li>
-          <a href="<?php echo url($page->url() . '/' . url::paramsToString(['tag' => $tag])) ?>">
-            <?php echo html($tag) ?>
-          </a>
+          <?php if(strpos(thisUrl(), 'tag') !== false): ?>
+            <a href="<?php echo url(thisUrl() . ',' .  $tag) ?>">
+              <?php echo html($tag) ?>
+            </a>
+          <?php else: ?>
+            <a href="<?php echo url($page->url() . '/' . url::paramsToString(['tag' => $tag])) ?>">
+              <?php echo html($tag) ?>
+            </a>
+          <?php endif ?>
         </li>
         <?php endforeach ?>
       </ul>
