@@ -17,10 +17,11 @@ return function($site, $pages, $page) {
 
   // add the tag filters
   if($rawTags = param('tag')) {
-    $filterTags = explode(',', $rawTags);
+    $selectedTags = explode(',', $rawTags);
 
-    $pieces = $pieces->filter(function($piece) use ($filterTags) {
-      if(array_intersect($piece->tags()->split(','), $filterTags)) {
+    $pieces = $pieces->filter(function($piece) use ($selectedTags) {
+      // find pieces that contain all the selectedTags
+      if(!array_diff($selectedTags, $piece->tags()->split(','))) {
         return $piece;
       }
     });
@@ -30,6 +31,6 @@ return function($site, $pages, $page) {
   $pieces   = $pieces->paginate(10);
   $pagination = $pieces->pagination();
 
-  return compact('pieces', 'tags', 'tag', 'pagination', 'filterTags');
+  return compact('pieces', 'tags', 'tag', 'pagination', 'selectedTags');
 
 };

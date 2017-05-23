@@ -24,32 +24,32 @@
     <aside>
       <h3>Tags</h3>
       <ul class="tags">
-        <?php foreach($tags as $tag): ?>
-        <li>
-          <?php if(strpos(thisUrl(), 'tag') !== false): ?>
-            <a href="<?php echo url(thisUrl() . ',' .  $tag) ?>">
-              <?php echo html($tag) ?>
-            </a>
-          <?php else: ?>
-            <a href="<?php echo url($page->url() . '/' . url::paramsToString(['tag' => $tag])) ?>">
-              <?php echo html($tag) ?>
-            </a>
-          <?php endif ?>
-        </li>
-        <?php endforeach ?>
-      </ul>
-    </aside>
+        <!-- append query params if 'tag' is already in the url -->
+        <?php $appendTags = strpos(thisUrl(), 'tag') !== false ?>
+        <?php $oneTagLeft = $selectedTags && count($selectedTags) < 2 ?>
 
-    <aside>
-      <h3>Current Tags</h3>
-      <ul class="tags">
-        <?php if(is_null($filterTags): ?>
-          <?php foreach($filterTags as $tag): ?>
+        <?php foreach($tags as $tag): ?>
           <li>
-            <?php echo html($tag) ?>
+            <?php $isSelected = $selectedTags && in_array($tag, $selectedTags) ?>
+            <?php
+
+            if($appendTags):
+              $base = ($isSelected) ? str_replace(',' . $tag, '', thisUrl()) : thisUrl();
+              $params = ($isSelected) ? '' : ',' .  $tag;
+              $base = ($oneTagLeft) ? str_replace('tag:' . $tag, '', $base) : $base ;
+            else:
+              $base = ($isSelected) ? str_replace('/tag:' . $tag, '', $page->url()) : $page->url();
+              $params = ($isSelected) ? '' : '/' . url::paramsToString(['tag' => $tag]);
+            endif;
+
+            $link = url($base . $params);
+            ?>
+
+            <a <?php ecco($isSelected, ' class="selected"') ?> href="<?php echo $link ?>">
+              <?php echo html($tag) ?>
+            </a>
           </li>
-          <?php endforeach ?>
-        <?php endif ?>
+        <?php endforeach ?>
       </ul>
     </aside>
 
