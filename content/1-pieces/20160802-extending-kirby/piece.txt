@@ -1,0 +1,29 @@
+Title: Extending Kirby (design, photography, architecture, whatever)
+
+----
+
+Date: 2016-08-02
+
+----
+
+Coverimage: extending.png
+
+----
+
+Text: 
+
+**Further reading**
+
+- (link: https://getkirby.com/blog text: Official Kirby Blog)
+- (link: https://getkirby.com/#kosmos text: Kirby Kosmos) (monthly newsletter)
+- (link: https://getkirby.com/docs text: Kirby Documentation)
+- (link: https://getkirby.com/docs/cookbook text: Kirby Cookbook)
+- (link: https://getkirby.com/docs/developer-guide text: Kirby Developer Guide)
+
+----
+
+Tags: design, photography, architecture, whatever
+
+----
+
+Brands: Gucci, DG

@@ -1,4 +1,4 @@
-title: Article
+title: Piece
 
 pages: false
 
@@ -6,12 +6,12 @@ fields:
   title:
     label: Title
     type:  title
-    
+
   coverimage:
     label: Cover Image
     type: image
     width: 1/2
-    
+
   date:
     icon: calendar
     label: Date
@@ -21,7 +21,12 @@ fields:
     default: today
     required: true
     width: 1/2
-  
+
+  tags:
+    label: Tags
+    type: tags
+    index: template
+
   text:
     label: Text
     type: textarea

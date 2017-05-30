@@ -1,0 +1,26 @@
+Title: Licensing Kirby (design, another)
+
+----
+
+Date: 2016-08-03
+
+----
+
+Text: 
+
+**Further reading**
+
+- [Entering the license code](https://getkirby.com/docs/installation/license-code) (Kirby Documentation)
+- [Free Trial](https://getkirby.com/blog/free-trial) (blog post about our license model)
+
+----
+
+Coverimage: 
+
+----
+
+Tags: design, another
+
+----
+
+Brands: Levi, Lucky

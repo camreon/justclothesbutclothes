@@ -24,6 +24,7 @@
     <aside>
       <h3>Tags</h3>
       <ul class="tags">
+
         <!-- append query params if 'tag' is already in the url -->
         <?php $appendTags = strpos(thisUrl(), 'tag') !== false ?>
         <?php $oneTagLeft = $selectedTags && count($selectedTags) < 2 ?>
@@ -33,6 +34,7 @@
             <?php $isSelected = $selectedTags && in_array($tag, $selectedTags) ?>
             <?php
 
+            // insanity
             if($appendTags):
               $base = ($isSelected) ? str_replace(',' . $tag, '', thisUrl()) : thisUrl();
               $params = ($isSelected) ? '' : ',' .  $tag;
