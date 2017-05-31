@@ -19,8 +19,12 @@ Coverimage:
 
 ----
 
-Tags: design, another
+Tags: design,another
 
 ----
 
-Brands: Levi, Lucky
+Size: 
+
+----
+
+Color: colorless

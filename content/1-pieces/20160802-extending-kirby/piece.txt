@@ -22,8 +22,12 @@ Text:
 
 ----
 
-Tags: design, photography, architecture, whatever
+Tags: design,photography,architecture,whatever
 
 ----
 
-Brands: Gucci, DG
+Size: 12
+
+----
+
+Color: red,gold

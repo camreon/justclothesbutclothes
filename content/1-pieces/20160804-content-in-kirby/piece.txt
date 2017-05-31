@@ -10,7 +10,7 @@ Coverimage: content.png
 
 ----
 
-Text:
+Text: 
 
 **Further reading**
 
@@ -21,6 +21,12 @@ Text:
 
 ----
 
-Tags: design, another, ok
+Tags: design,another,ok
 
 ----
+
+Size: medium
+
+----
+
+Color: red

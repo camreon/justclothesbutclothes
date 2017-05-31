@@ -27,6 +27,18 @@ fields:
     type: tags
     index: template
 
+  size:
+    label: Size
+    type: tags
+    index: template
+    field: size
+
+  color:
+    label: Color
+    type: tags
+    index: template
+    field: color
+
   text:
     label: Text
     type: textarea

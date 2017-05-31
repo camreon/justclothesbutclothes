@@ -20,36 +20,41 @@
       <hr />
     </header>
 
-    <!-- sidebar with tagcloud -->
     <aside>
-      <h3>Tags</h3>
+      <h3>Categories</h3>
       <ul class="tags">
 
         <!-- append query params if 'tag' is already in the url -->
         <?php $appendTags = strpos(thisUrl(), 'tag') !== false ?>
-        <?php $oneTagLeft = $selectedTags && count($selectedTags) < 2 ?>
+        <?php $oneTagLeft = $selected && count($selected) < 2 ?>
 
-        <?php foreach($tags as $tag): ?>
+        <?php foreach($categories as $category => $rawTags): ?>
           <li>
-            <?php $isSelected = $selectedTags && in_array($tag, $selectedTags) ?>
-            <?php
+            <b><?php echo html($category) ?></b>
+            <ul>
+              <?php $tags = split(',', $rawTags); ?>
+              <?php foreach ($tags as $tag): ?>
+                <?php $isSelected = $selected && in_array($tag, $selected);
 
-            // insanity
-            if($appendTags):
-              $base = ($isSelected) ? str_replace(',' . $tag, '', thisUrl()) : thisUrl();
-              $params = ($isSelected) ? '' : ',' .  $tag;
-              $base = ($oneTagLeft) ? str_replace('tag:' . $tag, '', $base) : $base ;
-            else:
-              $base = ($isSelected) ? str_replace('/tag:' . $tag, '', $page->url()) : $page->url();
-              $params = ($isSelected) ? '' : '/' . url::paramsToString(['tag' => $tag]);
-            endif;
+                // insanity
+                if($appendTags):
+                  $base = ($isSelected) ? str_replace(',' . $tag, '', thisUrl()) : thisUrl();
+                  $params = ($isSelected) ? '' : ',' .  $tag;
+                  $base = ($oneTagLeft) ? str_replace('tag:' . $tag, '', $base) : $base ;
+                else:
+                  $base = ($isSelected) ? str_replace('/tag:' . $tag, '', $page->url()) : $page->url();
+                  $params = ($isSelected) ? '' : '/' . url::paramsToString(['tag' => $tag]);
+                endif;
 
-            $link = url($base . $params);
-            ?>
-
-            <a <?php ecco($isSelected, ' class="selected"') ?> href="<?php echo $link ?>">
-              <?php echo html($tag) ?>
-            </a>
+                $link = url($base . $params);
+                ?>
+                <li>
+                  <a <?php ecco($isSelected, ' class="selected"') ?> href="<?php echo $link ?>">
+                    <?php echo html($tag) ?>
+                  </a>
+                </li>
+              <?php endforeach ?>
+            </ul>
           </li>
         <?php endforeach ?>
       </ul>

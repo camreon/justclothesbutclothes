@@ -17,14 +17,24 @@
         <?= $page->text()->kirbytext() ?>
       </div>
 
-      <h3>Tags</h3>
+      <h3>Categories</h3>
 
-      <?php $tags = $page->tags()->split(); ?>
-      <?php foreach($tags as $tag): ?>
-      <div class="tag">
-        <?php echo $tag ?>
-      </div>
-      <?php endforeach ?>
+      <aside>
+      <?php
+        $excludedFields = array('title', 'date', 'coverimage', 'text');
+        $c = $page->content();
+
+        foreach ($c as $key => $value) {
+          if ($key == "fields") {
+            foreach ($value as $field) {
+              if (!in_array($field, $excludedFields)) {
+                echo $field . ": " . $page->$field() . "<br/>";
+              }
+            }
+          }
+        }
+      ?>
+      </aside>
 
     </piece>
 

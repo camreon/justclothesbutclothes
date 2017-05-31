@@ -14,4 +14,12 @@ Tags: design,ok
 
 ----
 
-Text: ok
+Text: ok text
+
+----
+
+Size: 12,large
+
+----
+
+Color: brown-ish,ok

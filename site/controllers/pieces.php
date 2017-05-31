@@ -9,19 +9,48 @@
 
 return function($site, $pages, $page) {
 
+  $excludedFields = array('title', 'date', 'coverimage', 'text');
+
   // fetch the basic set of pages
   $pieces = $page->children()->visible()->flip();
+  $c = $pieces->first()->content();
 
-  // fetch all tags
-  $tags = $pieces->pluck('tags', ',', true);
+  $categories = Array();
+
+  // fetch all fields
+  foreach ($c as $key => $value) {
+    if ($key == "fields") {
+      foreach ($value as $field) {
+        if (!in_array($field, $excludedFields))  {
+          $tags = $pieces->pluck($field, ',', true);
+          $categories[$field] = implode(',', $tags);
+        }
+      }
+    }
+  }
 
   // add the tag filters
   if($rawTags = param('tag')) {
-    $selectedTags = explode(',', $rawTags);
+    $selected = explode(',', $rawTags);
 
-    $pieces = $pieces->filter(function($piece) use ($selectedTags) {
-      // find pieces that contain all the selectedTags
-      if(!array_diff($selectedTags, $piece->tags()->split(','))) {
+    $pieces = $pieces->filter(function($piece) use ($selected) {
+      // get all the tags from a single page
+      $pageTags = Array();
+      $c = $piece->content();
+      $excludedFields = array('title', 'date', 'coverimage', 'text');
+
+      foreach ($c as $key => $value) {
+        if ($key == "fields") {
+          foreach ($value as $field) {
+            if (!in_array($field, $excludedFields))  {
+              $pageTags[] = $piece->$field();
+            }
+          }
+        }
+      }
+
+      // find pieces that contain all the selected tags
+      if (!array_diff($selected, $pageTags)) {
         return $piece;
       }
     });
@@ -31,6 +60,6 @@ return function($site, $pages, $page) {
   $pieces   = $pieces->paginate(10);
   $pagination = $pieces->pagination();
 
-  return compact('pieces', 'tags', 'tag', 'pagination', 'selectedTags');
+  return compact('pieces', 'pagination', 'selected', 'categories');
 
 };
