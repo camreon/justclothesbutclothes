@@ -8,6 +8,19 @@ Kirby CMS based site
 - `cd justclothesbutclothes`
 - `php -S localhost:8888`
 
+## Adding Categories
+
+- open `./site/blueprints/piece.yml`
+- add a new block in this format (replacing `name` with the category name):
+   ```
+   name:
+     label: name
+     field: name
+     type: tags
+     index: template
+   ```
+- then you can add tags to that category within the panel or the raw `piece.txt` files
+
 ## The Panel
 
 You can find the login for Kirby's admin interface at
