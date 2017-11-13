@@ -1,45 +1,37 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
+  <main class="main piece" role="main">
     <piece class="piece single wrap">
 
-      <header class="piece-header">
-        <h1><?= $page->title()->html() ?></h1>
-        <div class="intro text">
-          <?= $page->date('F jS, Y') ?>
-        </div>
-        <hr />
+      <header>
+        <div><?= $page->isbn()->html() ?></div>
       </header>
 
-      <?php snippet('coverimage', $page) ?>
-
-      <div class="text">
-        <?= $page->text()->kirbytext() ?>
+      <div class="images">
+        <?php foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
+          <img src="<?= $image->url() ?>" alt="Thumbnail for <?= $page->title()->html() ?>" />
+        <?php endforeach ?>
       </div>
 
-      <h3>Categories</h3>
+      <div class="categories">      
+        <?php
+          $excludedFields = array('title', 'date', 'coverimage', 'text');
+          $c = $page->content();
 
-      <aside>
-      <?php
-        $excludedFields = array('title', 'date', 'coverimage', 'text');
-        $c = $page->content();
-
-        foreach ($c as $key => $value) {
-          if ($key == "fields") {
-            foreach ($value as $field) {
-              if (!in_array($field, $excludedFields)) {
-                echo $field . ": " . $page->$field() . "<br/>";
+          foreach ($c as $key => $value) {
+            if ($key == "fields") {
+              foreach ($value as $field) {
+                if (!in_array($field, $excludedFields)) {
+                  echo "<span><a href='/pieces/tag:" . $page->$field() . "'>" . $page->$field() . " </a></span> "; 
+                }
               }
             }
           }
-        }
-      ?>
-      </aside>
+        ?>
+      </div>
 
     </piece>
-
-    <?php snippet('prevnext', ['flip' => true]) ?>
-
+    <!-- <?php snippet('prevnext', ['flip' => true]) ?> -->
   </main>
 
 <?php snippet('footer') ?>

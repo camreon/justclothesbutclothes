@@ -1,4 +1,4 @@
-Title: Licensing Kirby (design, another)
+Title: Second Piece
 
 ----
 
@@ -18,13 +18,16 @@ Text:
 Coverimage: 
 
 ----
-
-Tags: design,another
-
+ISBN: S1-NOU1-15
 ----
-
-Size: 
-
+Designer: Homme Plisse Issey Miyake
 ----
-
-Color: colorless
+Fabric: 50% Nylon, 44% Polypropylene, 6% Polyurethane
+----
+Production: Seamless
+----
+Type: Shirt
+----
+Country: Japan
+----
+Era: 2010s 2015

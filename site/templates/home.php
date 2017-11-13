@@ -1,29 +1,34 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
-    
-    <header class="wrap">
-      <h1><?= $page->title()->html() ?></h1>
-      <div class="intro text">
-        <?= $page->intro()->kirbytext() ?>
-      </div>
-      <hr />
-    </header>
+  <?php $pieces = page('pieces')->children()->visible(); ?>
 
-    <div class="text wrap">
-      <?= $page->text()->kirbytext() ?>
-    </div>
-  
-    <section class="projects-section">
-      
-      <div class="wrap wide">
-        <h2>Latest Pieces</h2>
-        <?php snippet('showcase', ['limit' => 3]) ?>
-        <p class="projects-section-more"><a href="<?= page('pieces')->url() ?>" class="btn">show all pieces &hellip;</a></p>
-      </div>
-      
+  <main class="main home" role="main">
+    <section>
+      <ul class="piece-list">
+
+        <?php foreach($pieces as $piece): ?>
+          <li class="piece-list-item">
+            <a href="<?= $piece->url() ?>">
+              
+              <?php
+                $excludedFields = array('date', 'coverimage', 'text');
+                foreach ($piece->content() as $key => $value) {
+                  if ($key == "fields") {
+                    foreach ($value as $field) {
+                      if (!in_array($field, $excludedFields)) {
+                        echo "<span class='" . $field . "'>" . $piece->$field() . " </span> "; 
+                      }
+                    }
+                  }
+                }
+              ?>
+              
+            </a>  
+          </li>
+        <?php endforeach ?>
+
+      </ul> 
     </section>
-
   </main>
 
 <?php snippet('footer') ?>

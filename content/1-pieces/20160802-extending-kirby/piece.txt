@@ -1,4 +1,4 @@
-Title: Extending Kirby (design, photography, architecture, whatever)
+Title: Piece 1
 
 ----
 
@@ -21,13 +21,20 @@ Text:
 - (link: https://getkirby.com/docs/developer-guide text: Kirby Developer Guide)
 
 ----
-
-Tags: design,photography,architecture,whatever
-
+ISBN: J1-W1-93
 ----
-
-Size: 12
-
+Designer: Comme Des Garcons Homme Plus
 ----
-
-Color: red,gold
+Fabric: 100% Wool
+----
+Production: Gabardine, bleached
+----
+Closure: Zipper (unbranded), button (horn), hook (metal) 
+----
+Size: L
+----
+Type: Jacket
+----
+Country: Japan
+----
+Era: 1990s 1993

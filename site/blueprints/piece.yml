@@ -22,10 +22,35 @@ fields:
     required: true
     width: 1/2
 
-  tags:
-    label: Tags
+  isbn:
+    label: ISBN
     type: tags
     index: template
+    field: isbn
+
+  designer:
+    label: Designer
+    type: tags
+    index: template
+    field: designer
+
+  fabric:
+    label: Fabric
+    type: tags
+    index: template
+    field: fabric
+
+  production:
+    label: Production
+    type: tags
+    index: template
+    field: production
+
+  closure:
+    label: Closure
+    type: tags
+    index: template
+    field: closure
 
   size:
     label: Size
@@ -33,11 +58,23 @@ fields:
     index: template
     field: size
 
-  color:
-    label: Color
+  type:
+    label: Type
     type: tags
     index: template
-    field: color
+    field: type
+
+  country:
+    label: Country
+    type: tags
+    index: template
+    field: country
+
+  era`:
+    label: Era
+    type: tags
+    index: template
+    field: era`
 
   text:
     label: Text

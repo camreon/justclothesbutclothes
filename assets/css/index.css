@@ -1,4 +1,67 @@
 @charset "UTF-8";
+
+.home {
+  background: #000;
+}
+
+.piece-list {}
+
+.piece-list-item {
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #FFF;
+}
+
+.isbn {
+  color: rgb(252, 40 , 252);
+}
+
+.designer {
+  color: rgb(41, 253, 47);
+}
+
+.fabric {
+  color: rgb(0, 164, 216);
+}
+
+.production {
+  color: rgb(253, 115, 51);
+}
+
+.closure {
+  color: rgb(45, 255, 251);
+}
+
+.size {
+  color: rgb(231, 38, 34);
+}
+
+.type {
+  color: rgb(255, 253, 56);
+}
+
+.country {
+  color: rgb(160, 160, 160);
+}
+
+.era {
+  color: rgb(20, 146, 88);
+}
+
+section.wrap {
+  position: absolute;
+  top: 250px;
+  right: 200px;
+}
+
+
+
+
+
+
+
 /*
   # Kirby Starterkit
 
@@ -170,11 +233,11 @@ h4 {
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px solid #71efac;
 }
 
 a:hover, a:focus, a:active {
   color: #560bed;
+  text-decoration: underline;
 }
 
 /* Misc */
@@ -540,7 +603,6 @@ h1 + .intro {
 .showcase-link {
   display: block;
   position: relative;
-  padding-top: 100%;
   z-index: 0;
   border-bottom: 0;
 }
@@ -606,7 +668,6 @@ h1 + .intro {
 /* =====  3 Site Layout  ==================================================== */
 
 html {
-  background: #fffff8;
   color: #261e66;
   font: normal 400 1.5em/1.5 "Vesper Libre", Georgia, serif;
   /* Always show the vertical scrollbar to prevent `jumps`
@@ -771,8 +832,12 @@ body {
 /* -----  3.4 Main Content  ------------------------------------------------- */
 
 .main {
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
+  padding: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 /* =====  4 Template-specific Components ==================================== */

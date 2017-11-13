@@ -3,7 +3,7 @@
   <main class="main" role="main">
 
     <header class="wrap">
-      <h1><?= $page->title()->html() ?></h1>
+      <h1>*FOR TESTING ONLY*</h1>
 
       <?php
       // This page uses a separate controller to set variables, which can be used
@@ -61,31 +61,16 @@
     </aside>
 
     <section class="wrap">
+      <h3>Results</h3>
+
       <?php if($pieces->count()): ?>
         <?php foreach($pieces as $piece): ?>
 
           <piece class="piece index">
-
             <header class="piece-header">
-              <h2 class="piece-title">
-                <a href="<?= $piece->url() ?>"><?= $piece->title()->html() ?></a>
-              </h2>
-
-              <p class="piece-date"><?= $piece->date('F jS, Y') ?></p>
+              <a href="<?= $piece->url() ?>"><?= $piece->title()->html() ?></a>
             </header>
-
-            <!-- <?php snippet('coverimage', $piece) ?> -->
-
-            <!-- <div class="text">
-              <p>
-                <?= $piece->text()->kirbytext()->excerpt(50, 'words') ?>
-                <a href="<?= $piece->url() ?>" class="piece-more">read more</a>
-              </p>
-            </div> -->
-
           </piece>
-
-          <hr />
 
         <?php endforeach ?>
       <?php else: ?>

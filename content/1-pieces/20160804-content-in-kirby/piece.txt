@@ -1,4 +1,4 @@
-Title: Content in Kirby (design, another, ok)
+Title: Piece  III
 
 ----
 
@@ -20,13 +20,12 @@ Text:
 - (link: https://getkirby.com/docs/developer-guide/kirbytext/tags text: How to create custom Kirbytags) (Kirby Documentation)
 
 ----
-
-Tags: design,another,ok
-
+ISBN: J3-L2-10
 ----
-
-Size: medium
-
+Fabric:  Body: 100% Leather, Lining: 100% Polyester
 ----
-
-Color: red
+Size: S
+----
+Type: Jacket
+----
+Era: 2000s
