@@ -26,7 +26,7 @@
               foreach ($value as $field) {
                 if (!in_array($field, $excludedFields)) {
                   foreach (explode(',', $page->$field()) as $tag) {
-                    echo "<span><a href='/?q=" . urlencode($tag) . "'>" . $tag . " </a></span> "; 
+                    echo "<span><a href='/pieces?q=" . urlencode($tag) . "'>" . $tag . " </a></span> "; 
                   }
                 }
               }

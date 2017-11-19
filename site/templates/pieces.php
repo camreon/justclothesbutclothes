@@ -1,85 +1,36 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
+  <?php $pieces = page('pieces')->children()->visible(); ?>
 
-    <header class="wrap">
-      <h1>*FOR TESTING ONLY*</h1>
+  <main class="main" role="main" id="highlight">
+    <section>
+      <ul class="piece-list">
 
-      <?php
-      // This page uses a separate controller to set variables, which can be used
-      // within this template file. This results in less logic in your templates,
-      // making them more readable. Learn more about controllers at:
-      // https://getkirby.com/docs/developer-guide/advanced/controllers
-      if($pagination->page() == 1):
-      ?>
-        <div class="intro text">
-          <?= $page->text()->kirbytext() ?>
-        </div>
-      <?php endif ?>
-
-      <hr />
-    </header>
-
-    <aside>
-      <h3>Categories</h3>
-      <ul class="tags">
-
-        <!-- append query params if 'tag' is already in the url -->
-        <?php $appendTags = strpos(thisUrl(), 'tag') !== false ?>
-        <?php $oneTagLeft = $selected && count($selected) < 2 ?>
-
-        <?php foreach($categories as $category => $rawTags): ?>
-          <li>
-            <b><?php echo html($category) ?></b>
-            <ul>
-              <?php $tags = split(',', $rawTags); ?>
-              <?php foreach ($tags as $tag): ?>
-                <?php $isSelected = $selected && in_array($tag, $selected);
-
-                // insanity
-                if($appendTags):
-                  $base = ($isSelected) ? str_replace(',' . $tag, '', thisUrl()) : thisUrl();
-                  $params = ($isSelected) ? '' : ',' .  $tag;
-                  $base = ($oneTagLeft) ? str_replace('tag:' . $tag, '', $base) : $base ;
-                else:
-                  $base = ($isSelected) ? str_replace('/tag:' . $tag, '', $page->url()) : $page->url();
-                  $params = ($isSelected) ? '' : '/' . url::paramsToString(['tag' => $tag]);
-                endif;
-
-                $link = url($base . $params);
-                ?>
-                <li>
-                  <a <?php ecco($isSelected, ' class="selected"') ?> href="<?php echo $link ?>">
-                    <?php echo html($tag) ?>
-                  </a>
-                </li>
-              <?php endforeach ?>
-            </ul>
+        <?php foreach($pieces as $piece): ?>
+          <li class="piece-list-item">
+            <a href="<?= $piece->url() ?>">
+              
+              <?php
+                $excludedFields = array('title', 'date', 'coverimage', 'text');
+                foreach ($piece->content() as $key => $value) {
+                  if ($key == "fields") {
+                    foreach ($value as $field) {
+                      if (!in_array($field, $excludedFields)) {
+                        echo "<span class='" . $field . "'>" . $piece->$field() . "</span> "; 
+                      }
+                    }
+                  }
+                }
+              ?>
+              
+            </a>  
           </li>
         <?php endforeach ?>
-      </ul>
-    </aside>
 
-    <section class="wrap">
-      <h3>Results</h3>
-
-      <?php if($pieces->count()): ?>
-        <?php foreach($pieces as $piece): ?>
-
-          <piece class="piece index">
-            <header class="piece-header">
-              <a href="<?= $piece->url() ?>"><?= $piece->title()->html() ?></a>
-            </header>
-          </piece>
-
-        <?php endforeach ?>
-      <?php else: ?>
-        <p>This site does not contain any pieces yet.</p>
-      <?php endif ?>
+      </ul> 
     </section>
-
-    <?php snippet('pagination') ?>
-
   </main>
+
+  <?php echo js('assets/js/pieces.js') ?>
 
 <?php snippet('footer') ?>
