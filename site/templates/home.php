@@ -2,7 +2,7 @@
 
   <?php $pieces = page('pieces')->children()->visible(); ?>
 
-  <main class="main home" role="main">
+  <main class="main" role="main" id="highlight">
     <section>
       <ul class="piece-list">
 
@@ -11,7 +11,7 @@
             <a href="<?= $piece->url() ?>">
               
               <?php
-                $excludedFields = array('date', 'coverimage', 'text');
+                $excludedFields = array('title', 'date', 'coverimage', 'text');
                 foreach ($piece->content() as $key => $value) {
                   if ($key == "fields") {
                     foreach ($value as $field) {
@@ -30,5 +30,7 @@
       </ul> 
     </section>
   </main>
+
+ <?php echo js('assets/js/home.js') ?>
 
 <?php snippet('footer') ?>

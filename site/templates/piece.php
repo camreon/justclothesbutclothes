@@ -1,19 +1,22 @@
 <?php snippet('header') ?>
 
   <main class="main piece" role="main">
-    <piece class="piece single wrap">
+    <piece class="piece single">
 
       <header>
         <div><?= $page->isbn()->html() ?></div>
       </header>
 
       <div class="images">
-        <?php foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
-          <img src="<?= $image->url() ?>" alt="Thumbnail for <?= $page->title()->html() ?>" />
+        <?php $index = 0; foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
+          <a href="#img_<?= $index + 1 ?>" name="img_<?= $index ?>">
+            <img src="<?= $image->url() ?>" />
+          </a>
+          <?php $index++ ?>
         <?php endforeach ?>
       </div>
 
-      <div class="categories">      
+      <div class="categories">
         <?php
           $excludedFields = array('title', 'date', 'coverimage', 'text');
           $c = $page->content();
@@ -22,7 +25,9 @@
             if ($key == "fields") {
               foreach ($value as $field) {
                 if (!in_array($field, $excludedFields)) {
-                  echo "<span><a href='/pieces/tag:" . $page->$field() . "'>" . $page->$field() . " </a></span> "; 
+                  foreach (explode(',', $page->$field()) as $tag) {
+                    echo "<span><a href='/?q=" . urlencode($tag) . "'>" . $tag . " </a></span> "; 
+                  }
                 }
               }
             }

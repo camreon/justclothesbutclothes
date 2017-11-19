@@ -30,4 +30,4 @@ Type: Shirt
 ----
 Country: Japan
 ----
-Era: 2010s 2015
+Era: 2010s, 2015

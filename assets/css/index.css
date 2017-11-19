@@ -1,53 +1,11 @@
 @charset "UTF-8";
 
-.home {
-  background: #000;
+.piece-list {
+  font-style: italic;
 }
-
-.piece-list {}
 
 .piece-list-item {
-  margin-bottom: 20px;
-}
 
-.title {
-  color: #FFF;
-}
-
-.isbn {
-  color: rgb(252, 40 , 252);
-}
-
-.designer {
-  color: rgb(41, 253, 47);
-}
-
-.fabric {
-  color: rgb(0, 164, 216);
-}
-
-.production {
-  color: rgb(253, 115, 51);
-}
-
-.closure {
-  color: rgb(45, 255, 251);
-}
-
-.size {
-  color: rgb(231, 38, 34);
-}
-
-.type {
-  color: rgb(255, 253, 56);
-}
-
-.country {
-  color: rgb(160, 160, 160);
-}
-
-.era {
-  color: rgb(20, 146, 88);
 }
 
 section.wrap {
@@ -56,6 +14,45 @@ section.wrap {
   right: 200px;
 }
 
+.highlight {
+  background-color: #ffff00;
+}
+
+
+.gay {
+  background: #000;
+}
+
+.gay .title {
+  color: #FFF;
+}
+.gay .isbn {
+  color: rgb(252, 40 , 252);
+}
+.gay .designer {
+  color: rgb(41, 253, 47);
+}
+.gay .fabric {
+  color: rgb(0, 164, 216);
+}
+.gay .production {
+  color: rgb(253, 115, 51);
+}
+.gay .closure {
+  color: rgb(45, 255, 251);
+}
+.gay .size {
+  color: rgb(231, 38, 34);
+}
+.gay .type {
+  color: rgb(255, 253, 56);
+}
+.gay .country {
+  color: rgb(160, 160, 160);
+}
+.gay .era {
+  color: rgb(20, 146, 88);
+}
 
 
 
@@ -127,41 +124,36 @@ section.wrap {
 
 /* -----  1.1 Font Definitions  --------------------------------------------- */
 
-/* Montserrat */
 @font-face {
-  font-family: 'Montserrat';
-  src: url(../fonts/montserrat-700.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'garamondno8regular';
+    src: url('../fonts/garamondno8-regular-webfont.woff2') format('woff2'),
+         url('../fonts/garamondno8-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url(../fonts/montserrat-400.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Vesper Libre */
-@font-face {
-  font-family: 'Vesper Libre';
-  src: url(../fonts/vesperlibre-400.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'garamondno8italic';
+    src: url('../fonts/garamondno8-italic-webfont.woff2') format('woff2'),
+         url('../fonts/garamondno8-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Vesper Libre';
-  src: url(../fonts/vesperlibre-500.woff) format("woff");
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'garamondno8bold';
+    src: url('../fonts/garamondno8-bold-webfont.woff2') format('woff2'),
+         url('../fonts/garamondno8-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Vesper Libre';
-  src: url(../fonts/vesperlibre-700.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'garamondno8bold-italic';
+    src: url('../fonts/garamondno8-bold-italic-webfont.woff2') format('woff2'),
+         url('../fonts/garamondno8-bold-italic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
 }
 
 /* -----  1.2 Reset & Normalization  ---------------------------------------- */
@@ -236,7 +228,6 @@ a {
 }
 
 a:hover, a:focus, a:active {
-  color: #560bed;
   text-decoration: underline;
 }
 
@@ -668,8 +659,9 @@ h1 + .intro {
 /* =====  3 Site Layout  ==================================================== */
 
 html {
-  color: #261e66;
-  font: normal 400 1.5em/1.5 "Vesper Libre", Georgia, serif;
+  color: #000;
+  font: normal 400 1.5em/1.5 "garamondno8regular", Georgia, serif;
+  font-size: 16px;
   /* Always show the vertical scrollbar to prevent `jumps`
      of page content after navigating from a very short page
      that does not scroll to a long pager */
@@ -711,7 +703,7 @@ body {
 
 .branding {
   text-align: center;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-family: garamondno8regular, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.95rem;
@@ -878,7 +870,7 @@ body {
 .piece-more {
   font-size: 75%;
   text-transform: uppercase;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-family: garamondno8regular, Helvetica, Arial, sans-serif;
   letter-spacing: .025em;
   white-space: nowrap;
   border-bottom: 2px solid #71efac;
