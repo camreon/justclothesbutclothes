@@ -1,14 +1,14 @@
-# JCBC
+# JUST CLOTHES BUT CLOTHES
 
-Kirby CMS based site
+lil Kirby CMS site
 
 ## Quick start
 
 - `git clone git@github.com:camreon/justclothesbutclothes.git`
 - `cd justclothesbutclothes`
-- `php -S localhost:8888`
+- `./start`
 
-## Adding Categories
+## Adding Tags
 
 - open `./site/blueprints/piece.yml`
 - add a new block in this format (replacing `name` with the category name):
@@ -20,6 +20,13 @@ Kirby CMS based site
      index: template
    ```
 - then you can add tags to that category within the panel or the raw `piece.txt` files
+
+## Adding Content
+
+- add a new folder in `./content/1-pieces`
+- folder name must start with the next number and contain a `piece.txt` file
+- `piece.txt` is where you define each item's name, tags, etc.
+- images of the piece should also be in this folder
 
 ## The Panel
 
