@@ -22,7 +22,7 @@ Text:
 ----
 ISBN: J3-L2-10
 ----
-Fabric:  Body: 100% Leather, Lining: 100% Polyester
+Fabric:  Body: 100%, Leather, Lining: 100%, Polyester
 ----
 Size: S
 ----

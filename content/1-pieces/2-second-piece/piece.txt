@@ -22,7 +22,7 @@ ISBN: S1-NOU1-15
 ----
 Designer: Homme Plisse Issey Miyake
 ----
-Fabric: 50% Nylon, 44% Polypropylene, 6% Polyurethane
+Fabric: 50%, Nylon, 44%, Polypropylene, 6%, Polyurethane
 ----
 Production: Seamless
 ----

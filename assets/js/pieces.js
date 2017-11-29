@@ -3,10 +3,11 @@ function highlight(value)
     inputText = document.getElementById("highlight");
     var innerHTML = inputText.innerHTML;
 
-    // regex global case insensitive replace
-    var regEx = new RegExp(value, "ig");
+    // global case insensitive regex replace
+    var escapedValue = value.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
+    var regEx = new RegExp(escapedValue, "ig");
     innerHTML = innerHTML.replace(regEx, "<span class='highlight'>" + capitalize(value) + "</span>");
-    inputText.innerHTML = innerHTML; 
+    inputText.innerHTML = innerHTML;
 }
 
 function capitalize(string) {
@@ -29,8 +30,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (searchValue) {
         highlight(searchValue);
 
-        if (searchValue === 'gay') {
-            document.getElementById("highlight").classList.add('gay');
+        // hidden key/legend highlighting
+        if (searchValue === 'key') {
+            document.getElementById("highlight").classList.add('key');
+            document.getElementById("legend").classList.add('show');
         }
     }
 });

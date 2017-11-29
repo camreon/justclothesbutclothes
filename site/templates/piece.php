@@ -36,7 +36,6 @@
       </div>
 
     </piece>
-    <!-- <?php snippet('prevnext', ['flip' => true]) ?> -->
   </main>
 
 <?php snippet('footer') ?>
