@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
+  <main class="main" role="main" class="default">
 
     <header class="wrap">
       <h1><?= $page->title()->html() ?></h1>
@@ -9,7 +9,7 @@
       </div>
       <hr />
     </header>
-      
+
     <div class="text wrap">
       <?= $page->text()->kirbytext() ?>
     </div>

@@ -1,0 +1,31 @@
+Title: Piece  III
+
+----
+
+Date: 2016-08-04
+
+----
+
+Coverimage: content.png
+
+----
+
+Text: 
+
+**Further reading**
+
+- (link: https://getkirby.com/docs/getting-started text: Getting Started) (Kirby Documentation)
+- (link: https://getkirby.com/docs/content/text text: Formatting text) (Kirby Documentation)
+- (link: https://getkirby.com/docs/cookbook/blog text: Creating a Kirby-powered blog) (Kirby Cookbook)
+- (link: https://getkirby.com/docs/developer-guide/kirbytext/tags text: How to create custom Kirbytags) (Kirby Documentation)
+
+----
+ISBN: J3-L2-10
+----
+Fabric:  Body: 100%, Leather, Lining: 100%, Polyester
+----
+Size: S
+----
+Type: Jacket
+----
+Era: 2000s

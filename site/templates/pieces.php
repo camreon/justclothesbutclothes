@@ -2,14 +2,14 @@
 
   <?php $pieces = page('pieces')->children()->visible()->flip(); ?>
 
-  <main class="main" role="main" id="highlight">
+  <main class="main index" role="main" id="highlight">
     <section>
       <ul class="piece-list">
 
         <?php foreach($pieces as $piece): ?>
           <li class="piece-list-item">
             <a href="<?= $piece->url() ?>">
-              
+
               <?php
                 $excludedFields = array('title', 'date', 'coverimage', 'text');
                 foreach ($piece->content() as $cat => $value) {
@@ -17,19 +17,19 @@
                     foreach ($value as $field) {
                       if (!in_array($field, $excludedFields)) {
                         foreach (explode(',', $piece->$field()) as $tag) {
-                          echo "<span class='" . $field . "'>" . $tag . "</span> "; 
+                          echo "<span class='" . $field . "'>" . $tag . "</span> ";
                         }
                       }
                     }
                   }
                 }
               ?>
-              
-            </a>  
+
+            </a>
           </li>
         <?php endforeach ?>
 
-      </ul> 
+      </ul>
     </section>
 
     <div class="legend" id="legend">
