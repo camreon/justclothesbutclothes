@@ -13,13 +13,13 @@
             <?php if ($index == (($page->images()->count())-1)): ?>
               <a href="#categories" name="img_<?= $index ?>" class="image">
                 <div class="image-container">
-                  <img src="<?= $image->url() ?>" />
+                  <img src="<?= $image->resize(null, null, 50)->url() ?>" />
                 </div>
               </a>
             <?php else: ?>
               <a href="#img_<?= $index + 1 ?>" name="img_<?= $index ?>" class="image">
                 <div class="image-container">
-                  <img src="<?= $image->url() ?>" />
+                  <img src="<?= $image->resize(null, null, 50)->url() ?>" />
                 </div>
               </a>
               <?php $index++ ?>

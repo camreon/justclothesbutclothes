@@ -1,16 +1,27 @@
-<?php snippet('header') ?>
+Title: Essay-2
 
-  <main class="main essay" role="main">
-    <section>
+----
 
-      <blockquote>
+Intro: 
+
+----
+
+Nextpage: /pieces
+
+----
+
+Text: 
+
+<h4>ESSAY TWO</h4>
+
+        <blockquote>
         MR. HAINLEY: When you think about putting the show together, I know that a friend of a friend of mine, who was at the show, said the spots you were using to light the Marilyns were very particular –<br>
         MS. STURTEVANT: Spots.<br>
         MR. HAINLEY: – spots.<br>
         MS. STURTEVANT: Yes.<br>
         MR. HAINLEY: And I wondered if you could talk about where in your thinking process the installation fora show comes in to how the show manifests its –<br>
-        MS. STURTEVANT: It’s called thinking.
-        <p><sup>1</sup></p>
+        MS. STURTEVANT: It’s called thinking. [^Wong, L. (2002): Home away from 
+home? Abingdon: Routledge. Seite 171]
       </blockquote>
 
       <p>Elaine Sturtevant left us in 2014. She’s remembered by most for a body of work that among other things, is highly controversial and embroiled in many intensely dense and philosophical conversations surrounding notions of labor, methods of production and arrangement, as they deal with the act of creating and exhibiting artworks.</p>
@@ -28,16 +39,3 @@
 
       <p>Christian Alborz Oldham</p>
       <p>Linguistic styling by: Megan Rosaria Dutra</p>
-
-      <div class="agree">
-        <input type="checkbox" id="check"><label for="check">I agree with the terms</label>
-      </div>
-
-      <div class="continue">
-        <a href="/pieces">Continue</a>
-      </div>
-
-    </section>
-  </main>
-
-<?php snippet('footer') ?>

@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
-/*.piece-list {
-  font-style: italic;
-}*/
+/* in-text reference mark, sup tag */
+.footnote {}
 
-.piece-list-item {
+/* div wrapper for list of footnotes, ol list inside */
+.footnotes {}
 
-}
+/* div element before the ol list */
+.footnotedivider {} 
 
 section.wrap {
   position: absolute;
