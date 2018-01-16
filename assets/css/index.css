@@ -1,14 +1,5 @@
 @charset "UTF-8";
 
-/* in-text reference mark, sup tag */
-.footnote {}
-
-/* div wrapper for list of footnotes, ol list inside */
-.footnotes {}
-
-/* div element before the ol list */
-.footnotedivider {} 
-
 section.wrap {
   position: absolute;
   top: 250px;
@@ -103,6 +94,51 @@ section.wrap {
   /*color: rgb(20, 146, 88);*/
   border: hsl(152, 76%, 33%) 1px solid;
   background-color: hsl(152, 76%, 83%);
+}
+
+ /* tooltips */
+
+.ui-tooltip, .arrow:after {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.ui-tooltip {
+  max-width: 400px;
+  padding: 10px 20px;
+  color: white;
+}
+
+.arrow {
+  width: 70px;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+  bottom: -16px;
+}
+.arrow.top {
+  top: -16px;
+  bottom: auto;
+}
+.arrow.left {
+  left: 20%;
+}
+.arrow:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: -20px;
+  width: 25px;
+  height: 25px;
+  box-shadow: 6px 5px 9px -9px black;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.arrow.top:after {
+  bottom: -20px;
+  top: auto;
 }
 
 
